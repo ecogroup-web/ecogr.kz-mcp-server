@@ -1,0 +1,47 @@
+name: Guide or question / Инструкция или вопрос / Нұсқаулық немесе сұрақ
+description: Something in the README is unclear, outdated or missing / В README что-то непонятно, устарело или не хватает / README-де бірдеңе түсініксіз, ескірген немесе жетіспейді
+title: "[Docs]: "
+labels: ["docs", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **EN:** This issue is **public**: do not paste tokens or personal data. Order or account problems: contact your manager.
+
+        **RU:** Это обращение **публичное**: не вставляйте токены и персональные данные. Вопросы по заказам и аккаунту — к своему менеджеру.
+
+        **KK:** Бұл хабарлама **жария**: токендер мен жеке деректерді қоспаңыз. Тапсырыс пен аккаунт мәселелері — менеджерге.
+
+  - type: dropdown
+    id: language
+    attributes:
+      label: Language of the guide / Язык инструкции / Нұсқаулық тілі
+      options:
+        - English
+        - Русский
+        - Қазақша
+        - All / Все / Барлығы
+    validations:
+      required: true
+
+  - type: input
+    id: section
+    attributes:
+      label: Section / Раздел / Бөлім
+      description: "For example / Например: 4.3 Client snippets"
+    validations:
+      required: false
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: What is unclear, wrong or missing / Что непонятно, неверно или отсутствует / Не түсініксіз, қате немесе жоқ
+    validations:
+      required: true
+
+  - type: textarea
+    id: suggestion
+    attributes:
+      label: Suggested text or fix (optional) / Предлагаемый текст или правка (необязательно) / Ұсынылатын мәтін немесе түзету (міндетті емес)
+    validations:
+      required: false

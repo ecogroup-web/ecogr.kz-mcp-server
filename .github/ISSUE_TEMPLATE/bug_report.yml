@@ -1,0 +1,84 @@
+name: Bug report / Сообщение об ошибке / Қате туралы хабарлама
+description: The MCP server or this guide behaves wrongly / Сервер или инструкция работают неверно / Сервер немесе нұсқаулық қате жұмыс істейді
+title: "[Bug]: "
+labels: ["bug", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **EN:** This issue is **public**. **Never paste your token** (the value after `Bearer`), order numbers, tax numbers, names, phones or e-mails of customers. Replace them with `***`. Order or account problems: contact your manager, not this tracker.
+
+        **RU:** Это обращение **публичное**. **Никогда не вставляйте токен** (значение после `Bearer`), номера заказов, ИНН, имена, телефоны и e-mail клиентов. Замените их на `***`. Вопросы по заказам и аккаунту — к своему менеджеру, не в этот трекер.
+
+        **KK:** Бұл хабарлама **жария**. **Токенді** (`Bearer` кейінгі мән), тапсырыс нөмірлерін, СТН, клиенттердің аттарын, телефондарын және e-mail мекенжайларын **ешқашан қоспаңыз**. Оларды `***` деп ауыстырыңыз. Тапсырыс пен аккаунт мәселелері — менеджерге, бұл трекерге емес.
+
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: Before you submit / Перед отправкой / Жіберер алдында
+      options:
+        - label: I removed the token and personal data from everything below / Я убрал токен и персональные данные из всего ниже / Төмендегінің бәрінен токен мен жеке деректерді алып тастадым
+          required: true
+        - label: I searched the existing issues / Я поискал среди существующих обращений / Бұрынғы хабарламалардан іздедім
+          required: true
+
+  - type: dropdown
+    id: mode
+    attributes:
+      label: Mode / Режим / Режим
+      options:
+        - Guest (no token) / Гость (без токена) / Қонақ (токенсіз)
+        - Token of a client or employee / Токен клиента или сотрудника / Клиент немесе қызметкер токені
+        - Token of a manager / Токен менеджера / Менеджер токені
+        - Not sure / Не знаю / Білмеймін
+    validations:
+      required: true
+
+  - type: input
+    id: client
+    attributes:
+      label: MCP client and version / MCP-клиент и версия / MCP-клиент және нұсқасы
+      description: "Claude Code 2.x, Cursor, VS Code, Codex CLI, curl ... / например: Claude Code 2.x, Cursor, curl"
+    validations:
+      required: true
+
+  - type: input
+    id: tool
+    attributes:
+      label: Tool name / Имя инструмента / Құрал атауы
+      description: "For example `search_products` / Например `search_products`; если ошибка при подключении — напишите `connect`"
+    validations:
+      required: true
+
+  - type: textarea
+    id: request
+    attributes:
+      label: Request / Запрос / Сұрау
+      description: Arguments of the call or the `curl` command, **without the token** / Аргументы вызова или команда `curl`, **без токена** / Шақыру аргументтері немесе `curl` пәрмені, **токенсіз**
+      render: json
+    validations:
+      required: true
+
+  - type: textarea
+    id: response
+    attributes:
+      label: Response or error / Ответ или ошибка / Жауап немесе қате
+      description: Exact text, HTTP status, JSON-RPC code (for example `-32029`) / Точный текст, HTTP-статус, код JSON-RPC (например `-32029`) / Нақты мәтін, HTTP-мәртебе, JSON-RPC коды
+      render: text
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected and actual behavior / Ожидал и получил / Не күттіңіз және не болды
+    validations:
+      required: true
+
+  - type: input
+    id: time
+    attributes:
+      label: Date and time with time zone / Дата и время с часовым поясом / Күні мен уақыты, уақыт белдеуімен
+      description: "Needed to find the call in the audit log / Нужно, чтобы найти вызов в журнале аудита. Example / Пример: 2026-10-07 14:32 (UTC+5)"
+    validations:
+      required: false

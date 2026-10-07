@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Orders, prices, account / Заказы, цены, аккаунт / Тапсырыстар, бағалар, аккаунт
+    url: https://ecogr.kz
+    about: This tracker is only for the MCP server and its guide. For orders, prices and account access contact your manager. / Трекер только для MCP-сервера и инструкции. По заказам, ценам и доступу к аккаунту обратитесь к своему менеджеру. / Трекер тек MCP-сервері мен нұсқаулық үшін. Тапсырыс, баға және аккаунтқа қолжетімділік бойынша менеджерге хабарласыңыз.
+  - name: Security vulnerability / Уязвимость / Осалдық
+    url: https://github.com/ecogroup-web/ecogr.kz-mcp-server/security/advisories/new
+    about: Report privately, never in a public issue. See SECURITY.md. / Сообщайте приватно, не в публичном обращении. См. SECURITY.md. / Жеке хабарлаңыз, жария хабарламада емес. SECURITY.md қараңыз.

@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 440" width="920" height="440" font-family="-apple-system,Segoe UI,Helvetica,Arial,sans-serif" font-size="14">
+  <title>ecogr.kz MCP server architecture</title>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#475569"/></marker>
+  </defs>
+  <rect width="920" height="440" fill="#ffffff"/>
+  <rect x="0.5" y="0.5" width="919" height="439" fill="none" stroke="#e2e8f0"/>
+  <text x="460" y="30" text-anchor="middle" font-size="18" font-weight="700" fill="#0f172a">Architecture</text>
+
+  <!-- clients -->
+  <rect x="24" y="70" width="190" height="300" rx="10" fill="#eff6ff" stroke="#3b82f6"/>
+  <text x="119" y="98" text-anchor="middle" font-weight="700" fill="#1d4ed8">MCP client (AI app)</text>
+  <g fill="#1e3a8a" font-size="13">
+    <text x="119" y="130" text-anchor="middle">Claude Desktop / Code</text>
+    <text x="119" y="158" text-anchor="middle">Cursor</text>
+    <text x="119" y="186" text-anchor="middle">VS Code (Copilot)</text>
+    <text x="119" y="214" text-anchor="middle">Codex CLI / Gemini CLI</text>
+    <text x="119" y="242" text-anchor="middle">any Streamable-HTTP client</text>
+  </g>
+  <rect x="44" y="280" width="150" height="64" rx="8" fill="#ffffff" stroke="#93c5fd"/>
+  <text x="119" y="305" text-anchor="middle" font-size="12" fill="#1e3a8a">Authorization:</text>
+  <text x="119" y="324" text-anchor="middle" font-size="12" fill="#1e3a8a">Bearer &lt;token&gt;</text>
+
+  <line x1="214" y1="200" x2="262" y2="200" stroke="#475569" stroke-width="2" marker-end="url(#a)" marker-start="url(#a)"/>
+  <text x="238" y="186" text-anchor="middle" font-size="11" fill="#475569">HTTPS</text>
+
+  <!-- gateway -->
+  <rect x="262" y="70" width="230" height="300" rx="10" fill="#fefce8" stroke="#eab308"/>
+  <text x="377" y="98" text-anchor="middle" font-weight="700" fill="#854d0e">POST https://ecogr.kz/mcp</text>
+  <text x="377" y="116" text-anchor="middle" font-size="12" fill="#854d0e">JSON-RPC 2.0, no batches</text>
+  <g font-size="13" fill="#713f12">
+    <rect x="280" y="132" width="194" height="30" rx="6" fill="#fff" stroke="#fde047"/><text x="377" y="152" text-anchor="middle">1. body size limit (64 KB)</text>
+    <rect x="280" y="168" width="194" height="30" rx="6" fill="#fff" stroke="#fde047"/><text x="377" y="188" text-anchor="middle">2. rejection throttle</text>
+    <rect x="280" y="204" width="194" height="30" rx="6" fill="#fff" stroke="#fde047"/><text x="377" y="224" text-anchor="middle">3. Origin / Host check</text>
+    <rect x="280" y="240" width="194" height="30" rx="6" fill="#fff" stroke="#fde047"/><text x="377" y="260" text-anchor="middle">4. token (Sanctum, mcp:use)</text>
+    <rect x="280" y="276" width="194" height="30" rx="6" fill="#fff" stroke="#fde047"/><text x="377" y="296" text-anchor="middle">5. rate limits</text>
+    <rect x="280" y="312" width="194" height="30" rx="6" fill="#fff" stroke="#fde047"/><text x="377" y="332" text-anchor="middle">6. audit log</text>
+  </g>
+
+  <line x1="492" y1="200" x2="540" y2="200" stroke="#475569" stroke-width="2" marker-end="url(#a)"/>
+
+  <!-- server -->
+  <rect x="540" y="70" width="190" height="300" rx="10" fill="#f0fdf4" stroke="#22c55e"/>
+  <text x="635" y="98" text-anchor="middle" font-weight="700" fill="#15803d">"TDK MCP" server</text>
+  <g font-size="13" fill="#14532d">
+    <text x="635" y="130" text-anchor="middle">22 tools</text>
+    <text x="635" y="152" text-anchor="middle">1 resource</text>
+    <text x="635" y="174" text-anchor="middle">server instructions</text>
+    <text x="635" y="196" text-anchor="middle">(sent on initialize)</text>
+  </g>
+  <rect x="558" y="222" width="154" height="130" rx="8" fill="#ffffff" stroke="#86efac"/>
+  <g font-size="12" fill="#14532d">
+    <text x="635" y="244" text-anchor="middle" font-weight="700">same rules as the site</text>
+    <text x="635" y="266" text-anchor="middle">catalog visibility</text>
+    <text x="635" y="286" text-anchor="middle">personal prices</text>
+    <text x="635" y="306" text-anchor="middle">client access</text>
+    <text x="635" y="326" text-anchor="middle">cart rules</text>
+    <text x="635" y="344" text-anchor="middle">order rights</text>
+  </g>
+
+  <line x1="730" y1="200" x2="770" y2="200" stroke="#475569" stroke-width="2" marker-end="url(#a)"/>
+
+  <!-- backend -->
+  <rect x="770" y="70" width="126" height="300" rx="10" fill="#faf5ff" stroke="#a855f7"/>
+  <text x="833" y="98" text-anchor="middle" font-weight="700" fill="#7e22ce">Site data</text>
+  <g font-size="12" fill="#581c87">
+    <rect x="782" y="116" width="102" height="44" rx="6" fill="#fff" stroke="#d8b4fe"/><text x="833" y="143" text-anchor="middle">catalog</text>
+    <rect x="782" y="168" width="102" height="44" rx="6" fill="#fff" stroke="#d8b4fe"/><text x="833" y="190" text-anchor="middle">prices, stock</text><text x="833" y="205" text-anchor="middle" font-size="10">(from 1C)</text>
+    <rect x="782" y="220" width="102" height="44" rx="6" fill="#fff" stroke="#d8b4fe"/><text x="833" y="247" text-anchor="middle">carts, drafts</text>
+    <rect x="782" y="272" width="102" height="44" rx="6" fill="#fff" stroke="#d8b4fe"/><text x="833" y="299" text-anchor="middle">orders</text>
+    <rect x="782" y="324" width="102" height="36" rx="6" fill="#fff" stroke="#d8b4fe"/><text x="833" y="347" text-anchor="middle">site pages</text>
+  </g>
+
+  <text x="460" y="408" text-anchor="middle" font-size="13" fill="#475569">The server never sends an order: it builds a draft cart, a human checks and sends the order on the site.</text>
+</svg>

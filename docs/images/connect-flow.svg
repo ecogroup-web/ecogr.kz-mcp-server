@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 330" width="920" height="330" font-family="-apple-system,Segoe UI,Helvetica,Arial,sans-serif" font-size="13">
+  <title>How to connect: from token to first call</title>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10z" fill="#475569"/></marker></defs>
+  <rect width="920" height="330" fill="#ffffff"/>
+  <rect x="0.5" y="0.5" width="919" height="329" fill="none" stroke="#e2e8f0"/>
+  <text x="460" y="30" text-anchor="middle" font-size="18" font-weight="700" fill="#0f172a">Connection flow</text>
+
+  <text x="24" y="66" font-weight="700" fill="#b45309">HUMAN (once)</text>
+  <rect x="24" y="78" width="190" height="86" rx="10" fill="#fffbeb" stroke="#f59e0b"/>
+  <text x="119" y="102" text-anchor="middle" font-weight="700" fill="#92400e">1. Sign in to the site</text>
+  <text x="119" y="124" text-anchor="middle" fill="#78350f">open /mcp-server</text>
+  <text x="119" y="144" text-anchor="middle" fill="#78350f">(gear menu, "MCP server")</text>
+  <rect x="256" y="78" width="190" height="86" rx="10" fill="#fffbeb" stroke="#f59e0b"/>
+  <text x="351" y="102" text-anchor="middle" font-weight="700" fill="#92400e">2. Press "Connect"</text>
+  <text x="351" y="124" text-anchor="middle" fill="#78350f">server URL + token appear</text>
+  <text x="351" y="144" text-anchor="middle" fill="#78350f">press "Show" to see the token</text>
+  <rect x="488" y="78" width="190" height="86" rx="10" fill="#fffbeb" stroke="#f59e0b"/>
+  <text x="583" y="102" text-anchor="middle" font-weight="700" fill="#92400e">3. Give token to the AI</text>
+  <text x="583" y="124" text-anchor="middle" fill="#78350f">env var or client settings,</text>
+  <text x="583" y="144" text-anchor="middle" fill="#78350f">never in a chat or a repo</text>
+  <line x1="214" y1="121" x2="256" y2="121" stroke="#475569" stroke-width="2" marker-end="url(#a)"/>
+  <line x1="446" y1="121" x2="488" y2="121" stroke="#475569" stroke-width="2" marker-end="url(#a)"/>
+  <text x="710" y="102" fill="#64748b" font-size="12">No token? Guest mode still works:</text>
+  <text x="710" y="120" fill="#64748b" font-size="12">public catalog, retail prices, info.</text>
+
+  <text x="24" y="206" font-weight="700" fill="#1d4ed8">AI AGENT</text>
+  <rect x="24" y="218" width="190" height="86" rx="10" fill="#eff6ff" stroke="#3b82f6"/>
+  <text x="119" y="242" text-anchor="middle" font-weight="700" fill="#1e3a8a">4. Configure client</text>
+  <text x="119" y="264" text-anchor="middle" fill="#1e3a8a">type http, URL, Bearer header</text>
+  <text x="119" y="284" text-anchor="middle" fill="#1e3a8a">(snippets below)</text>
+  <rect x="256" y="218" width="190" height="86" rx="10" fill="#eff6ff" stroke="#3b82f6"/>
+  <text x="351" y="242" text-anchor="middle" font-weight="700" fill="#1e3a8a">5. initialize + tools/list</text>
+  <text x="351" y="264" text-anchor="middle" fill="#1e3a8a">read server instructions,</text>
+  <text x="351" y="284" text-anchor="middle" fill="#1e3a8a">see the visible tools</text>
+  <rect x="488" y="218" width="190" height="86" rx="10" fill="#eff6ff" stroke="#3b82f6"/>
+  <text x="583" y="242" text-anchor="middle" font-weight="700" fill="#1e3a8a">6. Verify</text>
+  <text x="583" y="264" text-anchor="middle" fill="#1e3a8a">whoami (token) or</text>
+  <text x="583" y="284" text-anchor="middle" fill="#1e3a8a">server_info (guest)</text>
+  <rect x="720" y="218" width="176" height="86" rx="10" fill="#f0fdf4" stroke="#22c55e"/>
+  <text x="808" y="242" text-anchor="middle" font-weight="700" fill="#14532d">7. Work</text>
+  <text x="808" y="264" text-anchor="middle" fill="#14532d">search, offers,</text>
+  <text x="808" y="284" text-anchor="middle" fill="#14532d">draft, handoff link</text>
+  <line x1="214" y1="261" x2="256" y2="261" stroke="#475569" stroke-width="2" marker-end="url(#a)"/>
+  <line x1="446" y1="261" x2="488" y2="261" stroke="#475569" stroke-width="2" marker-end="url(#a)"/>
+  <line x1="678" y1="261" x2="720" y2="261" stroke="#475569" stroke-width="2" marker-end="url(#a)"/>
+  <path d="M583 164 L583 192 L119 192 L119 218" fill="none" stroke="#475569" stroke-width="2" marker-end="url(#a)"/>
+</svg>
